@@ -14,7 +14,7 @@ const photos = [
     { src: 'https://asset.gecdesigns.com/img/wallpapers/beautiful-magical-misty-mountains-reflection-river-ultra-hd-wallpaper-4k-sr10012420-1706505766369-cover.webp', category: 'nature', tags: ['landscape', 'water'] },
     { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-bLwfhvuqABUzTtL4hPm8ejZlRssD6yxtTA&s', category: 'architecture', tags: ['urban'] },
     { src: 'https://play-lh.googleusercontent.com/BpZW3-Loxcv_DY3RX8bmVGzPl6d4NXPe5gOUg2MgYa8WJWD8vd1Y9T2EsQvDVuqvpTQM', category: 'people', tags: ['portrait'] },
-    { src: 'https://cdn.pixabay.com/photo/2021/11/13/23/06/tree-6792528_640.jpg', category: 'nature', tags: ['landscape', 'water'] },
+    { src: 'https://cdn.pixabay.com/photo/2021/11/13/23/06/tree-6792528_640.jpg', category: 'nature', tags: ['landscape'] },
     { src: 'https://w0.peakpx.com/wallpaper/620/896/HD-wallpaper-konoha-hokage-monument-after-fourth-shinobi-world-war-naruto-anime-sky-manga-boruto-the-next-generations-konohagakure-clouds-boruto-new-era-ninja-village-day.jpg', category: 'architecture', tags: ['urban'] },
     { src: 'https://wallpaperaccess.com/full/5244015.jpg', category: 'people', tags: ['portrait'] },
     { src: 'https://img.freepik.com/free-photo/japan-background-digital-art_23-2151546131.jpg', category: 'nature', tags: ['landscape'] },
