@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Photo Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo"></div>
+            <h1>Photo Gallery</h1>
+        </div>
+
+        <!-- Search bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search photos...">
+            <button id="searchButton"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="filters">
+            <div class="categories">
+                <h2>Categories</h2>
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="nature">Nature</button>
+                <button class="filter-btn" data-category="architecture">Architecture</button>
+                <button class="filter-btn" data-category="people">People</button>
+            </div>
+            
+            <div class="tags">
+                <h2>Tags</h2>
+                <button class="tag-btn" data-tag="landscape">Landscape</button>
+                <button class="tag-btn" data-tag="water">Water</button>
+                <button class="tag-btn" data-tag="urban">Urban</button>
+                <button class="tag-btn" data-tag="portrait">Portrait</button>
+            </div>
+        </div>
+
+        <div class="gallery" id="gallery">
+            <!-- Example photo with text overlay -->
+            <div class="gallery-item" data-title="Beautiful Landscape">
+                <img src="example-photo.jpg" alt="Photo">
+            </div>
+            <!-- Add more photos here -->
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <button class="close-btn" id="closeLightbox">&times;</button>
+        <img src="" alt="Enlarged photo" id="lightboxImage">
+        <button class="nav-btn prev" id="prevPhoto"><i class="fas fa-chevron-left"></i></button>
+        <button class="nav-btn next" id="nextPhoto"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <footer class="gallery-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Photo Gallery. All Rights Reserved.</p>
+            <p>Follow us on:
+                <a href="https://www.instagram.com/sujeetkoppad/" target="_blank">Instagram</a> |
+                <a href="https://www.linkedin.com/in/sujeet-koppad-a90619229/" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/Sujeetkoppad41" target="_blank">Github</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
