@@ -6,28 +6,30 @@ const prevPhoto = document.getElementById('prevPhoto');
 const nextPhoto = document.getElementById('nextPhoto');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const tagButtons = document.querySelectorAll('.tag-btn');
-const searchInput = document.getElementById('searchInput');
-const searchButton = document.getElementById('searchButton');
+const uploadForm = document.getElementById('uploadForm');
+const photoInput = document.getElementById('photoInput');
+const categorySelect = document.getElementById('categorySelect');
+const tagsInput = document.getElementById('tagsInput');
 
 const photos = [
-    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ITKdVJAiCC5P9lUIN--dP9rNlqnUsQ0PAQ&s', category: 'people', tags: ['portrait'] },
-    { src: 'https://asset.gecdesigns.com/img/wallpapers/beautiful-magical-misty-mountains-reflection-river-ultra-hd-wallpaper-4k-sr10012420-1706505766369-cover.webp', category: 'nature', tags: ['landscape', 'water'] },
-    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-bLwfhvuqABUzTtL4hPm8ejZlRssD6yxtTA&s', category: 'architecture', tags: ['urban'] },
-    { src: 'https://play-lh.googleusercontent.com/BpZW3-Loxcv_DY3RX8bmVGzPl6d4NXPe5gOUg2MgYa8WJWD8vd1Y9T2EsQvDVuqvpTQM', category: 'people', tags: ['portrait'] },
-    { src: 'https://cdn.pixabay.com/photo/2021/11/13/23/06/tree-6792528_640.jpg', category: 'nature', tags: ['landscape'] },
-    { src: 'https://w0.peakpx.com/wallpaper/620/896/HD-wallpaper-konoha-hokage-monument-after-fourth-shinobi-world-war-naruto-anime-sky-manga-boruto-the-next-generations-konohagakure-clouds-boruto-new-era-ninja-village-day.jpg', category: 'architecture', tags: ['urban'] },
-    { src: 'https://wallpaperaccess.com/full/5244015.jpg', category: 'people', tags: ['portrait'] },
-    { src: 'https://img.freepik.com/free-photo/japan-background-digital-art_23-2151546131.jpg', category: 'nature', tags: ['landscape'] },
-    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBIvi-DVPFvR3R2TdisAwdxNYcmw2SPTbTIQ&s', category: 'architecture', tags: ['urban'] },
-    { src: 'https://w0.peakpx.com/wallpaper/153/240/HD-wallpaper-alone-boy-exploring-city-ai-art.jpg', category: 'people', tags: ['portrait'] },
-    { src: 'https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg', category: 'nature', tags: ['landscape', 'water'] },
-    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJhkU2DY16-aSHjPP5XSoVJp3RxJ0BCt5Ouw&s', category: 'architecture', tags: ['urban'] },
-    { src: 'https://i.pinimg.com/474x/71/a6/4e/71a64ef2a5017c4d68c2cf096d6ceca1.jpg', category: 'people', tags: ['portrait'] },
-    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPoAm5lYkb4mUAmtpGdLlz45FbPylugNRgCqNchkJ-UzD1RDxI_7bbZRvoJ46vFWw0aOc&usqp=CAU', category: 'nature', tags: ['landscape'] },
-    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYjtHLW5151nTWtSWuuzWCjvkzY0GGis8WA&s', category: 'architecture', tags: ['urban'] },
-    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk7L-Nydy-e9o-c-5LyN-GylwKhCAq-pd8pQ&s', category: 'people', tags: ['portrait'] },
-    { src: 'https://wallpapershome.com/images/pages/ico_h/26026.jpeg', category: 'architecture', tags: ['urban'] },
-    { src: 'https://wallpapers.com/images/hd/4k-mountain-l3f04sogeaabr5h0.jpg', category: 'nature', tags: ['landscape'] },
+    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ITKdVJAiCC5P9lUIN--dP9rNlqnUsQ0PAQ&s', category: 'people', tags: ['portrait'], name:'people' },
+    { src: 'https://asset.gecdesigns.com/img/wallpapers/beautiful-magical-misty-mountains-reflection-river-ultra-hd-wallpaper-4k-sr10012420-1706505766369-cover.webp', category: 'nature', tags: ['landscape', 'water'], name:'nature'},
+    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-bLwfhvuqABUzTtL4hPm8ejZlRssD6yxtTA&s', category: 'architecture', tags: ['urban'], name:'architecture' },
+    { src: 'https://play-lh.googleusercontent.com/BpZW3-Loxcv_DY3RX8bmVGzPl6d4NXPe5gOUg2MgYa8WJWD8vd1Y9T2EsQvDVuqvpTQM', category: 'people', tags: ['portrait'],name:'people' },
+    { src: 'https://cdn.pixabay.com/photo/2021/11/13/23/06/tree-6792528_640.jpg', category: 'nature', tags: ['landscape'], name:'nature'},
+    { src: 'https://w0.peakpx.com/wallpaper/620/896/HD-wallpaper-konoha-hokage-monument-after-fourth-shinobi-world-war-naruto-anime-sky-manga-boruto-the-next-generations-konohagakure-clouds-boruto-new-era-ninja-village-day.jpg', category: 'architecture', tags: ['urban'],name:'architecture'},
+    { src: 'https://wallpaperaccess.com/full/5244015.jpg', category: 'people', tags: ['portrait'],name:'people'},
+    { src: 'https://img.freepik.com/free-photo/japan-background-digital-art_23-2151546131.jpg', category: 'nature', tags: ['landscape'], name:'nature'},
+    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBIvi-DVPFvR3R2TdisAwdxNYcmw2SPTbTIQ&s', category: 'architecture', tags: ['urban'],name:'architecture' },
+    { src: 'https://w0.peakpx.com/wallpaper/153/240/HD-wallpaper-alone-boy-exploring-city-ai-art.jpg', category: 'people', tags: ['portrait'] ,name:'people'},
+    { src: 'https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg', category: 'nature', tags: ['landscape', 'water'] ,name:'nature'},
+    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJhkU2DY16-aSHjPP5XSoVJp3RxJ0BCt5Ouw&s', category: 'architecture', tags: ['urban'],name:'architecture'  },
+    { src: 'https://i.pinimg.com/474x/71/a6/4e/71a64ef2a5017c4d68c2cf096d6ceca1.jpg', category: 'people', tags: ['portrait'],name:'people' },
+    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPoAm5lYkb4mUAmtpGdLlz45FbPylugNRgCqNchkJ-UzD1RDxI_7bbZRvoJ46vFWw0aOc&usqp=CAU', category: 'nature', tags: ['landscape'],name:'nature' },
+    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYjtHLW5151nTWtSWuuzWCjvkzY0GGis8WA&s', category: 'architecture', tags: ['urban'],name:'architecture'  },
+    { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk7L-Nydy-e9o-c-5LyN-GylwKhCAq-pd8pQ&s', category: 'people', tags: ['portrait'] ,name:'people'},
+    { src: 'https://wallpapershome.com/images/pages/ico_h/26026.jpeg', category: 'architecture', tags: ['urban'],name:'architecture'  },
+    { src: 'https://wallpapers.com/images/hd/4k-mountain-l3f04sogeaabr5h0.jpg', category: 'nature', tags: ['landscape'] ,name:'nature'},
     
 ];
 
@@ -61,11 +63,6 @@ function renderGallery() {
         gallery.appendChild(item);
     });
 
-    initMasonry();
-    addRatingListeners();
-}
-
-function initMasonry() {
     imagesLoaded(gallery, function() {
         new Masonry(gallery, {
             itemSelector: '.gallery-item',
@@ -73,26 +70,19 @@ function initMasonry() {
             percentPosition: true
         });
     });
+
+    addRatingListeners();
 }
 
 function openLightbox(index) {
     currentPhotoIndex = index;
     updateLightboxImage();
     lightbox.style.display = 'flex';
-    initZoom();
 }
 
 function updateLightboxImage() {
     lightboxImage.src = filteredPhotos[currentPhotoIndex].src;
     lightboxImage.alt = `Photo ${currentPhotoIndex + 1}`;
-}
-
-function initZoom() {
-    mediumZoom('#lightboxImage', {
-        background: '#000',
-        scrollOffset: 0,
-        container: '#lightbox'
-    });
 }
 
 function closeLightboxHandler() {
@@ -152,22 +142,6 @@ function updateStarRating(photoIndex, rating) {
     });
 }
 
-function searchGallery() {
-    const searchTerm = searchInput.value.toLowerCase();
-    filteredPhotos = photos.filter(photo => 
-        photo.category.toLowerCase().includes(searchTerm) ||
-        photo.tags.some(tag => tag.toLowerCase().includes(searchTerm))
-    );
-    renderGallery();
-}
-
-searchButton.addEventListener('click', searchGallery);
-searchInput.addEventListener('keyup', (e) => {
-    if (e.key === 'Enter') {
-        searchGallery();
-    }
-});
-
 closeLightbox.addEventListener('click', closeLightboxHandler);
 prevPhoto.addEventListener('click', prevPhotoHandler);
 nextPhoto.addEventListener('click', nextPhotoHandler);
@@ -175,3 +149,20 @@ filterButtons.forEach(btn => btn.addEventListener('click', () => filterGallery(b
 tagButtons.forEach(btn => btn.addEventListener('click', () => toggleTag(btn.dataset.tag)));
 
 renderGallery();
+uploadForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const file = photoInput.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const newPhoto = {
+                src: e.target.result,
+                category: categorySelect.value,
+                tags: tagsInput.value.split(',').map(tag => tag.trim())
+            };
+            photos.push(newPhoto);
+            renderGallery();
+        };
+        reader.readAsDataURL(file);
+    }
+});
