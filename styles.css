@@ -36,41 +36,39 @@ h1 {
     font-size: 2.5rem;
     margin:0;
 }
-/* Other existing styles */
 
-.search-container {
-    display: flex;
-    justify-content: center;
+.upload-container {
+    text-align: center;
     margin-bottom: 30px;
+    display: flex;
+}
+.upload-container h3{
+    margin-top:16px;
+    margin-right: 8px;
 }
 
-#searchInput {
-    width: 70%;
+#uploadForm {
+    flex-direction: column;
+    align-items: center;
+}
+
+#photoInput, #categorySelect, #tagsInput, #uploadForm button {
+    margin: 10px 0;
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 20px 0 0 20px;
-    outline: none;
+    border-radius: 5px;
 }
 
-#searchButton {
+#uploadForm button {
     background-color: #333;
     color: #fff;
-    border: none;
-    padding: 10px 20px;
     cursor: pointer;
-    border-radius: 0 20px 20px 0;
-    outline: none;
+    border-radius: 5px;
 }
 
-#searchButton i {
-    font-size: 16px;
-}
-
-#searchButton:hover {
+#uploadForm button:hover {
     background-color: #555;
 }
-
-
 
 h2 {
     margin-bottom: 10px;
@@ -95,12 +93,18 @@ h2 {
 }
 
 .filter-btn:hover, .tag-btn:hover {
-    background-color: #f0f0f0;
+    background-color: #555;
+    color: #fff;
+    border-color: #555;
 }
 
-.filter-btn.active {
+.filter-btn.active,.tag-btn.active {
     background-color: #333;
     color: #fff;
+    border-color: #333;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .gallery {
@@ -152,8 +156,7 @@ h2 {
     color: #f39c12;
 }
 
-.star:hover,
-.star.rated:hover ~ .star {
+.star:hover,.star.rated:hover ~ .star {
     color: #f1c40f;
 }
 
